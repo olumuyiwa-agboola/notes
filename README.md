@@ -1,0 +1,2 @@
+# blog
+My second brain.
