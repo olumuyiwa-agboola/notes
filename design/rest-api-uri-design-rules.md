@@ -34,9 +34,15 @@ Of the five URI segments, three (authority, path and query) will be dicussed in 
 ## I. General URI Design Rules
 1. Forward slash separator (/) *must* be used to indicate a hierarchical relationship between resources.
 2. A trailing forward slash (/) *should* not be included in URIs. As the last character within a URI’s path, a forward slash (/) adds no semantic value and may cause confusion. REST APIs should not expect a trailing slash and should not include them in the links that they provide to clients.
-3. Hyphens (-) *should* be used to improve the readability of URIs. Anywhere you would use a space or hyphen in English, you should use a hyphen in a URI.
-4. Underscores (\_) *should* not be used in URIs. Depending on the application’s font, the underscore
-(\_) character can either get partially obscured or completely hidden by this underlining. To avoid this confusion, use hyphens (-) instead of underscores.
+3. Hyphens (-) *should* be used to improve the readability of URIs. Anywhere you would use a space or hyphen in English, you should use a hyphen in a URI. For example,
+```
+http://api.example.restapi.org/blogs/mark-masse/entries/this-is-my-first-post
+```
+is much more readable than
+```
+http://api.example.restapi.org/blogs/MarkMasse/entries/ThisIsMyFirstPost
+```
+4. Underscores (\_) *should* not be used in URIs. Depending on the application’s font, the underscore (\_) character can either get partially obscured or completely hidden by this underlining. To avoid this confusion, use hyphens (-) instead of underscores.
 5. Lowercase letters *should* be preferred in URI paths. When convenient, lowercase letters are preferred in URI paths since capital letters can sometimes cause problems.
 6. File extensions *should* not be included in URIs. A REST API should not include artificial file extensions
 in URIs to indicate the format of a message’s entity body. Instead, they should rely on the media type, as communicated through the Content-Type header, to determine how to process the body’s content. 
